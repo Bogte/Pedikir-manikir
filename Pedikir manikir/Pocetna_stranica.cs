@@ -25,7 +25,6 @@ namespace Pedikir_manikir
         {
             Klijent f1 = new Klijent();
             f1.ShowDialog();
-
         }
 
         private void Pocetna_stranica_Load(object sender, EventArgs e)
