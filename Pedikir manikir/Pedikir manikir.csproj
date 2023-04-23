@@ -98,6 +98,12 @@
     <Compile Include="Usluga.Designer.cs">
       <DependentUpon>Usluga.cs</DependentUpon>
     </Compile>
+    <Compile Include="Zaposleni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zaposleni.Designer.cs">
+      <DependentUpon>Zaposleni.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +127,9 @@
     </Compile>
     <EmbeddedResource Include="Usluga.resx">
       <DependentUpon>Usluga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zaposleni.resx">
+      <DependentUpon>Zaposleni.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

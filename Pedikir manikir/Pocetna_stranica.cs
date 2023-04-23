@@ -43,5 +43,11 @@ namespace Pedikir_manikir
             Usluga f1 = new Usluga();
             f1.ShowDialog();
         }
+
+        private void zaposleniToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Zaposleni f1 = new Zaposleni();
+            f1.ShowDialog();
+        }
     }
 }

@@ -88,6 +88,7 @@
             this.zaposleniToolStripMenuItem.Name = "zaposleniToolStripMenuItem";
             this.zaposleniToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.zaposleniToolStripMenuItem.Text = "Zaposleni";
+            this.zaposleniToolStripMenuItem.Click += new System.EventHandler(this.zaposleniToolStripMenuItem_Click);
             // 
             // rezervacijaToolStripMenuItem
             // 
