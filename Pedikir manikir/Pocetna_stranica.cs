@@ -37,5 +37,11 @@ namespace Pedikir_manikir
             Plata f1 = new Plata();
             f1.ShowDialog();
         }
+
+        private void uslugaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Usluga f1 = new Usluga();
+            f1.ShowDialog();
+        }
     }
 }

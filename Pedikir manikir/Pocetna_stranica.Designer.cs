@@ -81,6 +81,7 @@
             this.uslugaToolStripMenuItem.Name = "uslugaToolStripMenuItem";
             this.uslugaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.uslugaToolStripMenuItem.Text = "Usluga";
+            this.uslugaToolStripMenuItem.Click += new System.EventHandler(this.uslugaToolStripMenuItem_Click);
             // 
             // zaposleniToolStripMenuItem
             // 
