@@ -31,5 +31,11 @@ namespace Pedikir_manikir
         {
             
         }
+
+        private void plataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Plata f1 = new Plata();
+            f1.ShowDialog();
+        }
     }
 }

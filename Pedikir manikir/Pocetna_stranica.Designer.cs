@@ -47,7 +47,8 @@
             this.rezervacijaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(600, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -58,47 +59,49 @@
             this.plataToolStripMenuItem,
             this.uslugaToolStripMenuItem});
             this.sifarniciToolStripMenuItem.Name = "sifarniciToolStripMenuItem";
-            this.sifarniciToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
+            this.sifarniciToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.sifarniciToolStripMenuItem.Text = "Sifarnici";
             // 
             // klijentToolStripMenuItem
             // 
             this.klijentToolStripMenuItem.Name = "klijentToolStripMenuItem";
-            this.klijentToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.klijentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.klijentToolStripMenuItem.Text = "Klijent";
             this.klijentToolStripMenuItem.Click += new System.EventHandler(this.klijentToolStripMenuItem_Click);
             // 
             // plataToolStripMenuItem
             // 
             this.plataToolStripMenuItem.Name = "plataToolStripMenuItem";
-            this.plataToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.plataToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.plataToolStripMenuItem.Text = "Plata";
+            this.plataToolStripMenuItem.Click += new System.EventHandler(this.plataToolStripMenuItem_Click);
             // 
             // uslugaToolStripMenuItem
             // 
             this.uslugaToolStripMenuItem.Name = "uslugaToolStripMenuItem";
-            this.uslugaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.uslugaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.uslugaToolStripMenuItem.Text = "Usluga";
             // 
             // zaposleniToolStripMenuItem
             // 
             this.zaposleniToolStripMenuItem.Name = "zaposleniToolStripMenuItem";
-            this.zaposleniToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
+            this.zaposleniToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.zaposleniToolStripMenuItem.Text = "Zaposleni";
             // 
             // rezervacijaToolStripMenuItem
             // 
             this.rezervacijaToolStripMenuItem.Name = "rezervacijaToolStripMenuItem";
-            this.rezervacijaToolStripMenuItem.Size = new System.Drawing.Size(98, 24);
+            this.rezervacijaToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.rezervacijaToolStripMenuItem.Text = "Rezervacija";
             // 
             // Pocetna_stranica
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Pocetna_stranica";
             this.Text = "Pocetna_stranica";
             this.Load += new System.EventHandler(this.Pocetna_stranica_Load);

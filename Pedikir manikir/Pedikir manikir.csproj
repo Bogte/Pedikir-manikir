@@ -78,6 +78,12 @@
       <DependentUpon>Klijent.cs</DependentUpon>
     </Compile>
     <Compile Include="Konekcija.cs" />
+    <Compile Include="Plata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plata.Designer.cs">
+      <DependentUpon>Plata.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pocetna_stranica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Klijent.resx">
       <DependentUpon>Klijent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plata.resx">
+      <DependentUpon>Plata.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pocetna_stranica.resx">
       <DependentUpon>Pocetna_stranica.cs</DependentUpon>

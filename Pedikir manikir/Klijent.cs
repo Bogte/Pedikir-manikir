@@ -87,8 +87,6 @@ namespace Pedikir_manikir
                     if(textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "" || textBox7.Text == "" || textBox8.Text == "")
                         throw new Exception();
 
-                    menjanja = new SqlCommand();
-
                     podaci = new DataTable();
 
                     podaci = Konekcija.Unos("SELECT * FROM Klijent WHERE ime = '" + textBox2.Text + "' AND prezime = '" + textBox3.Text + "' AND Datum_rodjenja = '" + textBox4.Text + "' AND Adresa = '" + textBox7.Text + "' AND JMBG = '" + textBox5.Text + "' AND Telefon = '" + textBox6.Text + "' AND Email = '" + textBox8.Text + "'");
@@ -96,6 +94,7 @@ namespace Pedikir_manikir
                     
                     if (textBox5.Text.Length != 13) throw new Exception();
 
+                    menjanja = new SqlCommand();
                     menjanja.CommandText = ("UPDATE Klijent SET Ime = '"+ textBox2.Text + "' WHERE id = " + textBox1.Text + 
                         " UPDATE Klijent SET Prezime = '" + textBox3.Text + "' WHERE id = " + textBox1.Text +
                         " UPDATE Klijent SET Datum_rodjenja = '" + textBox4.Text + "' WHERE id = " + textBox1.Text +
