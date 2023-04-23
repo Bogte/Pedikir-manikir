@@ -1,0 +1,22 @@
+C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\bin\Debug\Pedikir manikir.exe.config
+C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\bin\Debug\Pedikir manikir.exe
+C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\bin\Debug\Pedikir manikir.pdb
+C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\bin\Debug\System.Security.AccessControl.dll
+C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\bin\Debug\System.Security.Permissions.dll
+C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\bin\Debug\System.Security.Principal.Windows.dll
+C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\bin\Debug\System.Security.AccessControl.xml
+C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\bin\Debug\System.Security.Permissions.xml
+C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\obj\Debug\Pedikir manikir.csproj.AssemblyReference.cache
+C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\obj\Debug\Pedikir manikir.csproj.SuggestedBindingRedirects.cache
+C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\obj\Debug\Pedikir_manikir.Form1.resources
+C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\obj\Debug\Pedikir_manikir.Properties.Resources.resources
+C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\obj\Debug\Pedikir manikir.csproj.GenerateResource.cache
+C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\obj\Debug\Pedikir manikir.csproj.CoreCompileInputs.cache
+C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\obj\Debug\Pedikir manikir.csproj.CopyComplete
+C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\obj\Debug\Pedikir manikir.exe
+C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\obj\Debug\Pedikir manikir.pdb
+C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\obj\Debug\Pedikir_manikir.Klijent.resources
+C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\obj\Debug\Pedikir_manikir.Pocetna_stranica.resources
