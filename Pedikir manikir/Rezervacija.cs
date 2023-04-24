@@ -65,7 +65,7 @@ namespace Pedikir_manikir
                 textBox2.Text = Convert.ToString(dataGridView1.Rows[indeks].Cells["Telefon klijenta"].Value);
                 comboBox2.Text = Convert.ToString(dataGridView1.Rows[indeks].Cells["Zaposleni"].Value);
                 textBox3.Text = Convert.ToString(dataGridView1.Rows[indeks].Cells["Telefon zaposlenog"].Value);
-                comboBox3.Text = Convert.ToString(dataGridView1.Rows[indeks].Cells["Naziv"].Value);
+                comboBox3.Text = Convert.ToString(dataGridView1.Rows[indeks].Cells["Naziv usluge"].Value);
                 textBox4.Text = Convert.ToString(dataGridView1.Rows[indeks].Cells["Cena"].Value);
                 textBox5.Text = Convert.ToString(dataGridView1.Rows[indeks].Cells["Datum i vreme"].Value);
                 textBox6.Text = Convert.ToString(dataGridView1.Rows[indeks].Cells["Napomena"].Value);
@@ -199,10 +199,33 @@ namespace Pedikir_manikir
             }
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string[] pom = comboBox1.Text.Split();
+            podaci = new DataTable();
+            podaci = Konekcija.Unos("SELECT Telefon FROM Klijent WHERE Ime = '" + pom[0] + "' AND Prezime = '" + pom[1] + "'");
+            textBox2.Text = Convert.ToString(podaci.Rows[0][0]);
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string[] pom = comboBox2.Text.Split();
+            podaci = new DataTable();
+            podaci = Konekcija.Unos("SELECT Telefon FROM Zaposleni WHERE Ime = '" + pom[0] + "' AND Prezime = '" + pom[1] + "'");
+            textBox3.Text = Convert.ToString(podaci.Rows[0][0]);
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            podaci = new DataTable();
+            podaci = Konekcija.Unos("SELECT Cena FROM Usluga WHERE Naziv = '" + comboBox3.Text + "'");
+            textBox4.Text = Convert.ToString(podaci.Rows[0][0]);
+        }
+
         private void Osvezi()
         {
             podaci = new DataTable();
-            podaci = Konekcija.Unos("SELECT Rezervacija.id, Klijent.Ime + ' ' + Klijent.Prezime AS 'Klijent', Klijent.Telefon AS 'Telefon klijenta', Zaposleni.Ime + ' ' + Zaposleni.Prezime AS 'Zaposleni', Zaposleni.Telefon AS 'Telefon zaposlenog', Usluga.Naziv, Usluga.Cena, datum_vreme AS 'Datum i vreme', napomena FROM Rezervacija JOIN Klijent ON Klijent.id = klijent_id JOIN Zaposleni ON Zaposleni.id = zaposleni_id JOIN Usluga ON Usluga.id = usluga_id");
+            podaci = Konekcija.Unos("SELECT Rezervacija.id, Klijent.Ime + ' ' + Klijent.Prezime AS 'Klijent', Klijent.Telefon AS 'Telefon klijenta', Zaposleni.Ime + ' ' + Zaposleni.Prezime AS 'Zaposleni', Zaposleni.Telefon AS 'Telefon zaposlenog', Usluga.Naziv AS 'Naziv usluge', Usluga.Cena, datum_vreme AS 'Datum i vreme', napomena FROM Rezervacija JOIN Klijent ON Klijent.id = klijent_id JOIN Zaposleni ON Zaposleni.id = zaposleni_id JOIN Usluga ON Usluga.id = usluga_id");
             dataGridView1.DataSource = podaci;
         }
 

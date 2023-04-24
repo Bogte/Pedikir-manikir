@@ -136,6 +136,13 @@ namespace Pedikir_manikir
             }
         }
 
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            podaci = new DataTable();
+            podaci = Konekcija.Unos("SELECT Plata FROM Plata WHERE Uloga = '" + comboBox2.Text + "'");
+            textBox9.Text = Convert.ToString(podaci.Rows[0][0]);
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             try
