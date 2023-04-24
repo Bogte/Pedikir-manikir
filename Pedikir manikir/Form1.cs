@@ -41,7 +41,7 @@ namespace Pedikir_manikir
                 if ((textBox1.Text == "Stojna Pusicic" && textBox2.Text == "123") || podaci.Rows.Count >= 1 || (textBox1.Text == "1" && textBox2.Text == "1"))
                 {
                     Pocetna_stranica f1 = new Pocetna_stranica(textBox2.Text);
-                    f1.Text = "Pocetna_stranica " + textBox1.Text;
+                    f1.Text = "Pocetna_stranica '" + textBox1.Text + "'";
                     f1.ShowDialog();
                     textBox1.Text = "";
                     textBox2.Text = "";
