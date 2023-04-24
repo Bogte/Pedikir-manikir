@@ -72,6 +72,133 @@ namespace Pedikir_manikir
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Da li ste sigurni da zelite da obrisete ove podatake?", "Pedikir manikir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    menjanja = new SqlCommand();
+                    menjanja.CommandText = ("DELETE FROM Rezervacija WHERE id = " + textBox1.Text);
+
+                    SqlConnection con = new SqlConnection(Konekcija.Veza());
+                    con.Open();
+                    menjanja.Connection = con;
+                    menjanja.ExecuteNonQuery();
+                    con.Close();
+
+                    Osvezi();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ne mozete da obrisete ove podatake, druge tabele zahtevaju ove podatake! - " + ex.Source, "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                SqlConnection con = new SqlConnection(Konekcija.Veza());
+                con.Close();
+                Osvezi();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Da li ste sigurni da zelite da izmenite ove podatke?", "Pedikir manikir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    if (textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "" || comboBox1.Text == "" || comboBox2.Text == "" || comboBox3.Text == "")
+                        throw new Exception();
+
+                    string[] klijent = comboBox1.Text.Split();
+                    podaci = new DataTable();
+                    podaci = Konekcija.Unos("SELECT id FROM Klijent WHERE ime = '" + klijent[0] + "' AND prezime = '" + klijent[1] + "'");
+                    int klijent_id = (int)podaci.Rows[0][0];
+
+                    string[] zaposleni = comboBox2.Text.Split();
+                    podaci = new DataTable();
+                    podaci = Konekcija.Unos("SELECT id FROM Zaposleni WHERE ime = '" + zaposleni[0] + "' AND prezime = '" + zaposleni[1] + "'");
+                    int zaposleni_id = (int)podaci.Rows[0][0];
+
+                    podaci = new DataTable();
+                    podaci = Konekcija.Unos("SELECT id FROM Usluga WHERE Naziv = '" + comboBox3.Text + "'");
+                    int usluga_id = (int)podaci.Rows[0][0];
+
+                    podaci = new DataTable();
+                    podaci = Konekcija.Unos("SELECT * FROM Rezervacija WHERE klijent_id = '" + klijent_id + "' AND zaposleni_id = '" + zaposleni_id + "' AND usluga_id = '" + usluga_id + "' AND datum_vreme = '" + textBox5.Text + "' AND napomena = '" + textBox6.Text + "'");
+                    if (podaci.Rows.Count >= 1) throw new Exception();
+
+                    menjanja = new SqlCommand();
+                    menjanja.CommandText = ("UPDATE Rezervacija SET klijent_id = '" + klijent_id + "' WHERE id = " + textBox1.Text +
+                        " UPDATE Rezervacija SET zaposleni_id = " + zaposleni_id + " WHERE id = " + textBox1.Text +
+                        " UPDATE Rezervacija SET usluga_id = " + usluga_id + " WHERE id = " + textBox1.Text +
+                        " UPDATE Rezervacija SET datum_vreme = '" + textBox5.Text + "' WHERE id = " + textBox1.Text +
+                        " UPDATE Rezervacija SET napomena = '" + textBox6.Text + "' WHERE id = " + textBox1.Text);
+
+                    SqlConnection con = new SqlConnection(Konekcija.Veza());
+                    con.Open();
+                    menjanja.Connection = con;
+                    menjanja.ExecuteNonQuery();
+                    con.Close();
+
+                    Osvezi();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Podatak vec postoji u tabeli - " + ex.Source, "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                SqlConnection con = new SqlConnection(Konekcija.Veza());
+                con.Close();
+                Osvezi();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (MessageBox.Show("Da li ste sigurni da zelite da dodate ove podatke?", "Pedikir manikir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    if (textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "" || comboBox1.Text == "" || comboBox2.Text == "" || comboBox3.Text == "")
+                        throw new Exception();
+
+                    string[] klijent = comboBox1.Text.Split();
+                    podaci = new DataTable();
+                    podaci = Konekcija.Unos("SELECT id FROM Klijent WHERE ime = '" + klijent[0] + "' AND prezime = '" + klijent[1] + "'");
+                    int klijent_id = (int)podaci.Rows[0][0];
+
+                    string[] zaposleni = comboBox2.Text.Split();
+                    podaci = new DataTable();
+                    podaci = Konekcija.Unos("SELECT id FROM Zaposleni WHERE ime = '" + zaposleni[0] + "' AND prezime = '" + zaposleni[1] + "'");
+                    int zaposleni_id = (int)podaci.Rows[0][0];
+
+                    podaci = new DataTable();
+                    podaci = Konekcija.Unos("SELECT id FROM Usluga WHERE Naziv = '" + comboBox3.Text + "'");
+                    int usluga_id = (int)podaci.Rows[0][0];
+
+                    podaci = new DataTable();
+                    podaci = Konekcija.Unos("SELECT * FROM Rezervacija WHERE klijent_id = '" + klijent_id + "' AND zaposleni_id = '" + zaposleni_id + "' AND usluga_id = '" + usluga_id + "' AND datum_vreme = '" + textBox5.Text + "' AND napomena = '" + textBox6.Text + "'");
+                    if (podaci.Rows.Count >= 1) throw new Exception();
+
+                    menjanja = new SqlCommand();
+                    menjanja.CommandText = ("INSERT INTO Rezervacija VALUES (" + klijent_id + ", " + zaposleni_id + ", " + usluga_id + ", '" + textBox5.Text + "', '" + textBox6.Text + "')");
+
+                    SqlConnection con = new SqlConnection(Konekcija.Veza());
+                    con.Open();
+                    menjanja.Connection = con;
+                    menjanja.ExecuteNonQuery();
+                    con.Close();
+
+                    Osvezi();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ne mozete da dodate vec postojece podatke! - " + ex.Source, "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                SqlConnection con = new SqlConnection(Konekcija.Veza());
+                con.Close();
+                Osvezi();
+            }
+        }
+
         private void Osvezi()
         {
             podaci = new DataTable();
