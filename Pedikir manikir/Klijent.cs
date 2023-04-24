@@ -55,7 +55,7 @@ namespace Pedikir_manikir
         {
             try
             {
-                if (MessageBox.Show("Da li ste sigurni da zelite da obrisete ove podatake?", "EsDnevnik", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Da li ste sigurni da zelite da obrisete ove podatake?", "Pedikir manikir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     menjanja = new SqlCommand();
                     menjanja.CommandText = ("DELETE FROM Klijent WHERE id = " + textBox1.Text);
@@ -82,7 +82,7 @@ namespace Pedikir_manikir
         {
             try
             {
-                if (MessageBox.Show("Da li ste sigurni da zelite da izmenite ove podatke?", "EsDnevnik", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Da li ste sigurni da zelite da izmenite ove podatke?", "Pedikir manikir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     if(textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "" || textBox7.Text == "" || textBox8.Text == "")
                         throw new Exception();
@@ -126,7 +126,7 @@ namespace Pedikir_manikir
         {
             try
             {
-                if (MessageBox.Show("Da li ste sigurni da zelite da dodate ove podatke?", "EsDnevnik", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Da li ste sigurni da zelite da dodate ove podatke?", "Pedikir manikir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     if (textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "" || textBox7.Text == "" || textBox8.Text == "")
                         throw new Exception();

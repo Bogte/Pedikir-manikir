@@ -23,3 +23,4 @@ C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\obj\Debug\Pedikir_ma
 C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\obj\Debug\Pedikir_manikir.Plata.resources
 C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\obj\Debug\Pedikir_manikir.Usluga.resources
 C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\obj\Debug\Pedikir_manikir.Zaposleni.resources
+C:\Users\filip\source\repos\Pedikir manikir\Pedikir manikir\obj\Debug\Pedikir_manikir.Rezervacija.resources

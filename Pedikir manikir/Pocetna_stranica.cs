@@ -49,5 +49,11 @@ namespace Pedikir_manikir
             Zaposleni f1 = new Zaposleni();
             f1.ShowDialog();
         }
+
+        private void rezervacijaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Rezervacija f1 = new Rezervacija();
+            f1.ShowDialog();
+        }
     }
 }

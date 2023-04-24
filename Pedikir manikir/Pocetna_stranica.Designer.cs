@@ -65,21 +65,21 @@
             // klijentToolStripMenuItem
             // 
             this.klijentToolStripMenuItem.Name = "klijentToolStripMenuItem";
-            this.klijentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.klijentToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.klijentToolStripMenuItem.Text = "Klijent";
             this.klijentToolStripMenuItem.Click += new System.EventHandler(this.klijentToolStripMenuItem_Click);
             // 
             // plataToolStripMenuItem
             // 
             this.plataToolStripMenuItem.Name = "plataToolStripMenuItem";
-            this.plataToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.plataToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.plataToolStripMenuItem.Text = "Plata";
             this.plataToolStripMenuItem.Click += new System.EventHandler(this.plataToolStripMenuItem_Click);
             // 
             // uslugaToolStripMenuItem
             // 
             this.uslugaToolStripMenuItem.Name = "uslugaToolStripMenuItem";
-            this.uslugaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.uslugaToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.uslugaToolStripMenuItem.Text = "Usluga";
             this.uslugaToolStripMenuItem.Click += new System.EventHandler(this.uslugaToolStripMenuItem_Click);
             // 
@@ -95,6 +95,7 @@
             this.rezervacijaToolStripMenuItem.Name = "rezervacijaToolStripMenuItem";
             this.rezervacijaToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.rezervacijaToolStripMenuItem.Text = "Rezervacija";
+            this.rezervacijaToolStripMenuItem.Click += new System.EventHandler(this.rezervacijaToolStripMenuItem_Click);
             // 
             // Pocetna_stranica
             // 
@@ -103,7 +104,7 @@
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Pocetna_stranica";
             this.Text = "Pocetna_stranica";
             this.Load += new System.EventHandler(this.Pocetna_stranica_Load);
