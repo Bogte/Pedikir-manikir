@@ -75,10 +75,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(664, 180);
+            this.button1.Location = new System.Drawing.Point(290, 204);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 21);
+            this.button1.Size = new System.Drawing.Size(370, 42);
             this.button1.TabIndex = 4;
             this.button1.Text = "Uloguj se";
             this.button1.UseVisualStyleBackColor = true;

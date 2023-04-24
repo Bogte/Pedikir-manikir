@@ -197,7 +197,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(29, 425);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 33);
             this.button1.TabIndex = 17;
             this.button1.Text = "Brisi";
             this.button1.UseVisualStyleBackColor = true;
@@ -207,7 +207,7 @@
             // 
             this.button2.Location = new System.Drawing.Point(110, 425);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(75, 33);
             this.button2.TabIndex = 18;
             this.button2.Text = "izmeni";
             this.button2.UseVisualStyleBackColor = true;
@@ -217,7 +217,7 @@
             // 
             this.button3.Location = new System.Drawing.Point(191, 425);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(75, 33);
             this.button3.TabIndex = 19;
             this.button3.Text = "Dodaj";
             this.button3.UseVisualStyleBackColor = true;
