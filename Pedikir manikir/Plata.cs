@@ -32,13 +32,6 @@ namespace Pedikir_manikir
             podaci = new DataTable();
             podaci = Konekcija.Unos("SELECT * FROM Plata");
             dataGridView1.DataSource = podaci;
-
-            string[] pomocna = new string[podaci.Rows.Count];
-            for (int i = 0; i < podaci.Rows.Count; i++)
-            {
-                pomocna[i] = Convert.ToString(podaci.Rows[i]["Uloga"]);
-                comboBox1.Items.Add(pomocna[i]);
-            }
         }
 
         private void dataGridView1_CurrentCellChanged(object sender, EventArgs e)
@@ -48,7 +41,7 @@ namespace Pedikir_manikir
                 int indeks = dataGridView1.CurrentRow.Index;
 
                 textBox1.Text = Convert.ToString(dataGridView1.Rows[indeks].Cells["id"].Value);
-                comboBox1.Text = Convert.ToString(dataGridView1.Rows[indeks].Cells["Uloga"].Value);
+                textBox2.Text = Convert.ToString(dataGridView1.Rows[indeks].Cells["Uloga"].Value);
                 textBox3.Text = Convert.ToString(dataGridView1.Rows[indeks].Cells["Plata"].Value);
             }
         }
@@ -86,15 +79,15 @@ namespace Pedikir_manikir
             {
                 if (MessageBox.Show("Da li ste sigurni da zelite da izmenite ove podatke?", "Pedikir manikir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (comboBox1.Text == "" || textBox3.Text == "")
+                    if (textBox2.Text == "" || textBox3.Text == "")
                         throw new Exception();
 
                     podaci = new DataTable();
-                    podaci = Konekcija.Unos("SELECT * FROM Plata WHERE Uloga = '" + comboBox1.Text + "' AND Plata = " + textBox3.Text + "");
+                    podaci = Konekcija.Unos("SELECT * FROM Plata WHERE Uloga = '" + textBox2.Text + "' AND Plata = " + textBox3.Text + "");
                     if (podaci.Rows.Count >= 1) throw new Exception();
 
                     menjanja = new SqlCommand();
-                    menjanja.CommandText = ("UPDATE Plata SET Uloga = '" + comboBox1.Text + "' WHERE id = " + textBox1.Text +
+                    menjanja.CommandText = ("UPDATE Plata SET Uloga = '" + textBox2.Text + "' WHERE id = " + textBox1.Text +
                     " UPDATE Plata SET Plata = " + textBox3.Text + " WHERE id = " + textBox1.Text);
 
                     SqlConnection con = new SqlConnection(Konekcija.Veza());
@@ -121,15 +114,15 @@ namespace Pedikir_manikir
             {
                 if (MessageBox.Show("Da li ste sigurni da zelite da dodate ove podatke?", "Pedikir manikir", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (comboBox1.Text == "" || textBox3.Text == "")
+                    if (textBox2.Text == "" || textBox3.Text == "")
                         throw new Exception();
 
                     podaci = new DataTable();
-                    podaci = Konekcija.Unos("SELECT * FROM Plata WHERE Uloga = '" + comboBox1.Text + "' AND Plata = " + textBox3.Text);
+                    podaci = Konekcija.Unos("SELECT * FROM Plata WHERE Uloga = '" + textBox2.Text + "' AND Plata = " + textBox3.Text);
                     if (podaci.Rows.Count >= 1) throw new Exception();
 
                     menjanja = new SqlCommand();
-                    menjanja.CommandText = ("INSERT INTO Plata VALUES ('" + comboBox1.Text + "', " + textBox3.Text + ")");
+                    menjanja.CommandText = ("INSERT INTO Plata VALUES ('" + textBox2.Text + "', " + textBox3.Text + ")");
 
                     SqlConnection con = new SqlConnection(Konekcija.Veza());
                     con.Open();
