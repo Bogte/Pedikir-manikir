@@ -55,5 +55,11 @@ namespace Pedikir_manikir
             Rezervacija f1 = new Rezervacija();
             f1.ShowDialog();
         }
+
+        private void slobodniTerminiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Slobodni_termini f1 = new Slobodni_termini();
+            f1.ShowDialog();
+        }
     }
 }

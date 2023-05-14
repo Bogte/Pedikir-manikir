@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -160,34 +161,47 @@ namespace Pedikir_manikir
                     if (textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "" || textBox6.Text == "" || comboBox1.Text == "" || comboBox2.Text == "" || comboBox3.Text == "")
                         throw new Exception();
 
-                    string[] klijent = comboBox1.Text.Split();
-                    podaci = new DataTable();
-                    podaci = Konekcija.Unos("SELECT id FROM Klijent WHERE ime = '" + klijent[0] + "' AND prezime = '" + klijent[1] + "'");
-                    int klijent_id = (int)podaci.Rows[0][0];
+                    string[] pom = textBox5.Text.Split(' ');
+                    if ((pom[1] == "10:00:00" && pom[2] == "AM") || (pom[1] == "11:00:00" && pom[2] == "AM") || (pom[1] == "12:00:00" && pom[2] == "AM") || (pom[1] == "1:00:00" && pom[2] == "PM") || (pom[1] == "2:00:00" && pom[2] == "PM") || (pom[1] == "3:00:00" && pom[2] == "PM") || (pom[1] == "4:00:00" && pom[2] == "PM") || (pom[1] == "9:00:00" && pom[2] == "AM") || (pom[1] == "8:00:00" && pom[2] == "AM"))
+                    {
 
-                    string[] zaposleni = comboBox2.Text.Split();
-                    podaci = new DataTable();
-                    podaci = Konekcija.Unos("SELECT id FROM Zaposleni WHERE ime = '" + zaposleni[0] + "' AND prezime = '" + zaposleni[1] + "'");
-                    int zaposleni_id = (int)podaci.Rows[0][0];
+                        string[] klijent = comboBox1.Text.Split();
+                        podaci = new DataTable();
+                        podaci = Konekcija.Unos("SELECT id FROM Klijent WHERE ime = '" + klijent[0] + "' AND prezime = '" + klijent[1] + "'");
+                        int klijent_id = (int)podaci.Rows[0][0];
 
-                    podaci = new DataTable();
-                    podaci = Konekcija.Unos("SELECT id FROM Usluga WHERE Naziv = '" + comboBox3.Text + "'");
-                    int usluga_id = (int)podaci.Rows[0][0];
+                        string[] zaposleni = comboBox2.Text.Split();
+                        podaci = new DataTable();
+                        podaci = Konekcija.Unos("SELECT id FROM Zaposleni WHERE ime = '" + zaposleni[0] + "' AND prezime = '" + zaposleni[1] + "'");
+                        int zaposleni_id = (int)podaci.Rows[0][0];
 
-                    podaci = new DataTable();
-                    podaci = Konekcija.Unos("SELECT * FROM Rezervacija WHERE klijent_id = '" + klijent_id + "' AND zaposleni_id = '" + zaposleni_id + "' AND usluga_id = '" + usluga_id + "' AND datum_vreme = '" + textBox5.Text + "' AND napomena = '" + textBox6.Text + "'");
-                    if (podaci.Rows.Count >= 1) throw new Exception();
+                        podaci = new DataTable();
+                        podaci = Konekcija.Unos("SELECT id FROM Usluga WHERE Naziv = '" + comboBox3.Text + "'");
+                        int usluga_id = (int)podaci.Rows[0][0];
 
-                    menjanja = new SqlCommand();
-                    menjanja.CommandText = ("INSERT INTO Rezervacija VALUES (" + klijent_id + ", " + zaposleni_id + ", " + usluga_id + ", '" + textBox5.Text + "', '" + textBox6.Text + "')");
+                        podaci = new DataTable();
+                        podaci = Konekcija.Unos("SELECT zaposleni_id, datum_vreme FROM Rezervacija WHERE zaposleni_id = " + zaposleni_id + "AND datum_vreme = '" + textBox5.Text + "'");
+                        if (podaci.Rows.Count >= 1) throw new Exception();
 
-                    SqlConnection con = new SqlConnection(Konekcija.Veza());
-                    con.Open();
-                    menjanja.Connection = con;
-                    menjanja.ExecuteNonQuery();
-                    con.Close();
+                        podaci = new DataTable();
+                        podaci = Konekcija.Unos("SELECT * FROM Rezervacija WHERE klijent_id = '" + klijent_id + "' AND zaposleni_id = '" + zaposleni_id + "' AND usluga_id = '" + usluga_id + "' AND datum_vreme = '" + textBox5.Text + "' AND napomena = '" + textBox6.Text + "'");
+                        if (podaci.Rows.Count >= 1) throw new Exception();
 
-                    Osvezi();
+                        menjanja = new SqlCommand();
+                        menjanja.CommandText = ("INSERT INTO Rezervacija VALUES (" + klijent_id + ", " + zaposleni_id + ", " + usluga_id + ", '" + textBox5.Text + "', '" + textBox6.Text + "')");
+
+                        SqlConnection con = new SqlConnection(Konekcija.Veza());
+                        con.Open();
+                        menjanja.Connection = con;
+                        menjanja.ExecuteNonQuery();
+                        con.Close();
+
+                        Osvezi();
+                    }
+                    else
+                    {
+                        throw new Exception();
+                    }
                 }
             }
             catch (Exception ex)

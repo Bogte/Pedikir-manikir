@@ -35,6 +35,7 @@
             this.uslugaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zaposleniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rezervacijaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.slobodniTerminiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +45,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sifarniciToolStripMenuItem,
             this.zaposleniToolStripMenuItem,
-            this.rezervacijaToolStripMenuItem});
+            this.rezervacijaToolStripMenuItem,
+            this.slobodniTerminiToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
@@ -97,6 +99,13 @@
             this.rezervacijaToolStripMenuItem.Text = "Rezervacija";
             this.rezervacijaToolStripMenuItem.Click += new System.EventHandler(this.rezervacijaToolStripMenuItem_Click);
             // 
+            // slobodniTerminiToolStripMenuItem
+            // 
+            this.slobodniTerminiToolStripMenuItem.Name = "slobodniTerminiToolStripMenuItem";
+            this.slobodniTerminiToolStripMenuItem.Size = new System.Drawing.Size(107, 20);
+            this.slobodniTerminiToolStripMenuItem.Text = "Slobodni termini";
+            this.slobodniTerminiToolStripMenuItem.Click += new System.EventHandler(this.slobodniTerminiToolStripMenuItem_Click);
+            // 
             // Pocetna_stranica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -124,5 +133,6 @@
         private System.Windows.Forms.ToolStripMenuItem uslugaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zaposleniToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rezervacijaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem slobodniTerminiToolStripMenuItem;
     }
 }
